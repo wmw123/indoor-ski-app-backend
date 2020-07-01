@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   review.associate = function (models) {
-    // associations can be defined here
+    review.belongsTo(models.user);
+    review.belongsTo(models.indoorskiplace);
   };
   return review;
 };

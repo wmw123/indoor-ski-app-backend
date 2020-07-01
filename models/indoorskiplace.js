@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   indoorskiplace.associate = function (models) {
-    // associations can be defined here
+    indoorskiplace.hasMany(models.review);
   };
   return indoorskiplace;
 };
