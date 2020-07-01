@@ -1,27 +1,31 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  class indoorskiplace extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+  const indoorskiplace = sequelize.define(
+    "indoorskiplace",
+    {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      website: {
+        type: DataTypes.STRING,
+      },
+      location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      price: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      rating: {
+        type: DataTypes.INTEGER,
+      },
+    },
+    {}
+  );
+  indoorskiplace.associate = function (models) {
+    // associations can be defined here
   };
-  indoorskiplace.init({
-    name: DataTypes.STRING,
-    website: DataTypes.STRING,
-    location: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    rating: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'indoorskiplace',
-  });
   return indoorskiplace;
 };
