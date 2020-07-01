@@ -19,12 +19,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      price: {
+      priceAveragePerHour: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
       rating: {
         type: Sequelize.INTEGER,
+      },
+      facility: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

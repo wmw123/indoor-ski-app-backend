@@ -14,12 +14,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      price: {
+      priceAveragePerHour: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       rating: {
         type: DataTypes.INTEGER,
+      },
+      facility: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
     },
     {}
