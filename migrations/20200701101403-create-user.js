@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      type: {
+      snowSport: {
         type: Sequelize.STRING,
       },
       experience: {

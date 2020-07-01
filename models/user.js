@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      type: {
+      snowSport: {
         type: DataTypes.STRING,
       },
       experience: {
