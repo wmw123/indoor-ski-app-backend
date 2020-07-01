@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
   );
   indoorskiplace.associate = function (models) {
     indoorskiplace.hasMany(models.review);
+    indoorskiplace.belongsToMany(models.user, {
+      through: "wishlistItems",
+      foreignKey: "userId",
+    });
   };
   return indoorskiplace;
 };
