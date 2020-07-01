@@ -33,4 +33,33 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:indoorskiplaceId", async (req, res) => {
+  const indoorskiplaceId = parseInt(req.params.indoorskiplaceId);
+  const indoorskiplace = await Indoorskiplace.findByPk(indoorskiplaceId, {
+    include: [Review],
+  });
+
+  if (!indoorskiplace) {
+    res.status(404).send("Indoorskiplace not found");
+  } else {
+    res.send(indoorskiplace);
+  }
+});
+
+router.get("/:indoorskiplaceId/reviews", async (req, res, next) => {
+  try {
+    const indoorskiplaceId = parseInt(req.params.indoorskiplaceId);
+    const indoorskiplace = await Indoorskiplace.findByPk(indoorskiplaceId, {
+      include: [Review],
+    });
+    if (indoorskiplace) {
+      res.send(indoorskiplace.reviews);
+    } else {
+      res.status(404).send("Indoorskiplaces with reviews not found");
+    }
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
