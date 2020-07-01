@@ -8,6 +8,8 @@ module.exports = {
         {
           rating: 5,
           quote: "Great vibe and good instructors",
+          userId: 1,
+          indoorskiplaceId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -15,6 +17,8 @@ module.exports = {
           rating: 3,
           quote:
             "Not enthusiastic about the snow conditions, but great atmosphere",
+          userId: 2,
+          indoorskiplaceId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
