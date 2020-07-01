@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   user.associate = function (models) {
-    // associations can be defined here
+    user.hasMany(models.review);
+    user.belongsToMany(models.indoorskiplace, {
+      through: "wishlistItems",
+      foreignKey: "indoorskiplaceId",
+    });
   };
   return user;
 };

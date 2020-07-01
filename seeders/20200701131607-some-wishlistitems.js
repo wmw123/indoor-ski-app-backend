@@ -2,21 +2,22 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert(
-      "reviews",
+    return await queryInterface.bulkInsert(
+      "wishlistItems",
       [
         {
-          rating: 5,
-          quote: "Great vibe and good instructors",
           userId: 1,
           indoorskiplaceId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          rating: 3,
-          quote:
-            "Not enthusiastic about the snow conditions, but great atmosphere",
+          userId: 1,
+          indoorskiplaceId: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
           userId: 2,
           indoorskiplaceId: 3,
           createdAt: new Date(),
@@ -28,6 +29,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("reviews", null, {});
+    return await queryInterface.bulkDelete("wishlistItems", null, {});
   },
 };
