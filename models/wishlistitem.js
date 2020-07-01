@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   const wishlistItem = sequelize.define(
-    "review",
+    "wishlistItem",
     {
       indoorskiplaceId: {
         type: DataTypes.INTEGER,
@@ -16,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
     wishlistItem.belongsTo(models.user);
     wishlistItem.belongsTo(models.indoorskiplace);
   };
-  return review;
+  return wishlistItem;
 };
