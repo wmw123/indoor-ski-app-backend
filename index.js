@@ -1,3 +1,5 @@
+require("dotenv").config({ debug: process.env.DEBUG });
+
 const express = require("express");
 const loggerMiddleWare = require("morgan");
 const corsMiddleWare = require("cors");
